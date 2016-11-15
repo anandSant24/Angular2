@@ -24,7 +24,7 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary'>
+                            <button class='btn btn-primary'> 
                                 showImage
                             </button>
                         </th>
@@ -37,7 +37,10 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='let product of products'>
-                        <td>{{product.imageUrl}}</td>
+                        <td>
+                            <!-- property binding using [ ] -->
+                            <img [src]= 'product.imageUrl' [title] = 'product.productName' [style.width.px]='imageWidth' >
+                        </td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>

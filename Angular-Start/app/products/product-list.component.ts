@@ -27,5 +27,6 @@ export class ProductListComponent{
         "starRating": 4.2,
         "imageUrl": "https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     }
-    ]
+    ];
+    imageWidth: number = 50;
 }
