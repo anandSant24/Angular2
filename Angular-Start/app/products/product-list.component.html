@@ -36,6 +36,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr *ngFor='let product of products'>
+                        <td>{{product.imageUrl}}</td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.starRating}}</td>
+                    </tr>
                     <!--<tr *ngFor='let product of products | productFilter:listFilter'>
                         <td>
                             <img *ngIf='showImage'
