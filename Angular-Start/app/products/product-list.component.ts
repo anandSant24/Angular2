@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
 @Component({
     selector:'pm-products',
     templateUrl: 'app/products/product-list.component.html'
 })
 
-export class ProductListComponent{
+export class ProductListComponent implements OnInit{
     showImage: boolean = false;
     pageTitle: string = 'Anand Kumar Sant';
+    /* IProduct is an Interface from TypeScript for Good practice as they can't be transpiled into JS */
     products: IProduct[] = [    {
         "productId": 1,
         "productName": "Leaf Rake",
@@ -34,5 +35,9 @@ export class ProductListComponent{
         this.showImage = !this.showImage;
     }
     listFilter: string = 'Cart';
+
+    ngOnInit(): void{
+        console.log('testing interface implementaion');
+    }
 
 }

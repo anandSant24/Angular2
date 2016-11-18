@@ -28,6 +28,12 @@
                             <button class='btn btn-primary' (click)=toggleImage()> 
                                 {{showImage ? 'hide' : 'show' }}
                             </button>
+                            <!-- Todo observe that ngOnInit is getting called onload FIX this 
+                            check for the ngOnInit() method inside product-list.component
+                            -->
+                            <button class='btn btn-primary' (click)=ngOnInit()> 
+                                deals
+                            </button>                            
                         </th>
                         <th>Product</th>
                         <th>Code</th>
