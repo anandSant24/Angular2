@@ -25,7 +25,7 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary' (click)=toggleImage()> 
+                            <button class='btn btn-primary' (click)='toggleImage()'> 
                                 {{showImage ? 'hide' : 'show' }}
                             </button>
                             <!-- Todo observe that ngOnInit is getting called onload FIX this 
@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'>
+                    <tr *ngFor='let product of products | productsFilter: listFilter'>
                         <td>
                             <!-- property binding using [ ] -->
                             <img [src]= 'product.imageUrl' [title] = 'product.productName' [style.width.px]='imageWidth' >
