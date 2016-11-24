@@ -52,7 +52,7 @@
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>
                         <td>{{product.price}}</td>
-                        <td><product-rating></product-rating></td>
+                        <td><product-rating [rating]='product.starRating'></product-rating></td>
                     </tr>
                     <!--<tr *ngFor='let product of products | productFilter:listFilter'>
                         <td>
