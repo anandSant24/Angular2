@@ -3,7 +3,8 @@ import { IProduct } from './product';
 
 @Component({
     selector:'pm-products',
-    templateUrl: 'app/products/product-list.component.html'
+    moduleId: module.id,
+    templateUrl: 'product-list.component.html'
 })
 
 export class ProductListComponent implements OnInit{
