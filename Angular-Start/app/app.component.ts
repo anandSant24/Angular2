@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
         <test-selector></test-selector>
     `
 })
+
 export class AppComponent {
-    
- }
+
+}

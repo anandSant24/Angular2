@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ProductService } from './products/product.service';
 
 import { AppComponent }  from './app.component';
 import { ProductListComponent } from './products/product-list.component';
@@ -11,6 +12,8 @@ import { StarComponent } from './common/star.component';
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, ProductListComponent, TestComponent, ProductFilterPipe, StarComponent ],
+  providers: [ProductService],
   bootstrap: [ AppComponent ]
+  
 })
 export class AppModule { }
