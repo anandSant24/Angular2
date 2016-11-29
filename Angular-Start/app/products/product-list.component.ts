@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
 import { ProductService } from './product.service';
+
 @Component({
     selector:'pm-products',
     moduleId: module.id,
@@ -13,6 +14,7 @@ export class ProductListComponent implements OnInit{
     /* IProduct is an Interface from TypeScript for Good practice as they can't be transpiled into JS */
     products: IProduct[];
     imageWidth: number = 50;
+    errorMessage: string;
     toggleImage(): void{
         this.showImage = !this.showImage;
     }
@@ -25,7 +27,11 @@ export class ProductListComponent implements OnInit{
     constructor(private _productService: ProductService){ }
 
     ngOnInit(): void{
-     this.products = this._productService.getProducts();   
+        this._productService.getProducts()
+        .subscribe( products => this.products = products, 
+            error => this.errorMessage = <any> error
+        )   
+
     }
 
 }

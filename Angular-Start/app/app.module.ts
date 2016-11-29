@@ -9,8 +9,10 @@ import { TestComponent } from './products/test-list.component';
 import { ProductFilterPipe } from './products/product-filter.pipes';
 import { StarComponent } from './common/star.component';
 
+import {HttpModule} from '@angular/http';
+
 @NgModule({
-  imports: [ BrowserModule, FormsModule ],
+  imports: [ BrowserModule, FormsModule, HttpModule ],
   declarations: [ AppComponent, ProductListComponent, TestComponent, ProductFilterPipe, StarComponent ],
   providers: [ProductService],
   bootstrap: [ AppComponent ]
