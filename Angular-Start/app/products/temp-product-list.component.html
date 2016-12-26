@@ -9,7 +9,7 @@
             <div class='col-md-2'>Filter by:</div>
             <div class='col-md-4'>
                 <!-- SPACING is important for Two way binding -->
-                <input type='text' [(ngModel)]='listFilter'/>
+                <input type='text' [(ngModel)] = 'listFilter'/>
             </div>
         </div>
         <div class='row' *ngIf='listFilter'>
@@ -21,12 +21,12 @@
         <div class='has-error'></div>
 
         <div class='table-responsive'>
-            <table class='table' *ngIf='products && products.length'>
+            <table class='table'>
                 <thead>
                     <tr>
                         <th>
                             <button class='btn btn-primary' (click)='toggleImage()'> 
-                                {{showImage ? 'Hide' : 'Show' }} Image
+                                {{showImage ? 'hide' : 'show' }}
                             </button>
                             <!-- Todo observe that ngOnInit is getting called onload FIX this 
                             check for the ngOnInit() method inside product-list.component
@@ -43,21 +43,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products | productFilter: listFilter'>
+                    <tr *ngFor='let product of products | productsFilter: listFilter'>
                         <td>
-                            <!-- property binding using [ ] --> 
-                            <img *ngIf='showImage'
-                            [src]='product.imageUrl' 
-                            [title]='product.productName | uppercase'
-                            [style.width] = 'product.imageWidth'
-                            [style.margin]='product.imageMargin'>
+                            <!-- property binding using [ ] -->
+                            <img [src]= 'product.imageUrl' [title] = 'product.productName' [style.width.px]='imageWidth' >
                         </td>
                         <td>{{product.productName}}</td>
-                        <td>{{product.productCode | lowercase}}</td>
+                        <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>
-                        <!-- 1.2-2 atleat 1 decimal and followed by two placed -->
-                        <td>{{product.price | currency: 'USD':true:'1.2-2'}}</td>
-                        <td><ai-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'></ai-star></td>
+                        <td>{{product.price}}</td>
+                        <td><product-rating [rating]='product.starRating' (notify)='onNotify($event)'></product-rating></td>
                     </tr>
                     <!--<tr *ngFor='let product of products | productFilter:listFilter'>
                         <td>
