@@ -49,7 +49,7 @@
                             <img *ngIf='showImage'
                             [src]='product.imageUrl' 
                             [title]='product.productName | uppercase'
-                            [style.width] = 'product.imageWidth'
+                            [style.width.px] = 'imageWidth'
                             [style.margin]='product.imageMargin'>
                         </td>
                         <td>{{product.productName}}</td>
